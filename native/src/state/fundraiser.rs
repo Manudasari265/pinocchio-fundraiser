@@ -1,4 +1,4 @@
-use pinocchio_pubkey::Pubkey;
+use pinocchio::pubkey::Pubkey;
 use super::utils::{DataLen, Initialized};
 
 #[repr(C)]

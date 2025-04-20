@@ -1,11 +1,11 @@
 use pinocchio::program_error::ProgramError;
 
-pub mod initiialize;
+pub mod initialize;
 pub mod contribute;
 pub mod check;
 pub mod refund;
 
-pub use initiialize::*;
+pub use initialize::*;
 pub use contribute::*;
 pub use check::*;
 pub use refund::*;

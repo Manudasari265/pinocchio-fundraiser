@@ -8,13 +8,12 @@ use pinocchio::{
         Sysvar
     },
     ProgramResult,
-    pubkey::Pubkey
 };
 use pinocchio_token::state::TokenAccount;
 use pinocchio_system::instructions::CreateAccount;
 use crate::{
     state::Fundraiser,
-    utils::{
+    state::utils::{
         DataLen,
         load_ix_data,
         load_acc_mut_unchecked,
@@ -62,9 +61,7 @@ pub fn process_initialize(
     //? import the rent for account space allocation
     let rent = Rent::get()?;
     //? load the instruction data
-    let ix_data = unsafe {
-        load_ix_data::<InitializeInstructionData>(instruction_data)?
-    };
+    let ix_data = unsafe {load_ix_data::<InitializeInstructionData>(instruction_data)?};
 
     //? extract the bump seed and construct fundraiser seeds for the pda derivatiuon 
     let bump_seed = [ix_data.bump];
@@ -92,7 +89,7 @@ pub fn process_initialize(
 
     //? load the fundraiser state account
     let fundraiser_state = (unsafe {
-       load_acc_mut_unchecked::<Fundraiser>(fundraiser)
+       load_acc_mut_unchecked::<Fundraiser>(fundraiser.borrow_mut_data_unchecked())
     })?;
 
     //? initialize the fundraiser state account
