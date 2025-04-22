@@ -6,7 +6,7 @@ In this program, a user will be able to create a fundraiser account, where he wi
 
 ## Let's walk throught the program architecture:
 
-A fundraising account consists of:
+📦 A fundraising account consists of:
 
 ```rust
 #[repr(C)]
@@ -53,7 +53,7 @@ system_program: Program resposible for the initialization of any new account
 
 token_program and associated_token_program: We are creating new ATAs
 
-A Contribute state account looks something like:
+📦 A Contribute state account looks something like:
 
 ```rust
 #[repr(C)]
@@ -65,5 +65,20 @@ pub struct Contribute {
 ```
 In this state account, we will store:
 
-amount: the target amount that the contributor is trying to contribute
+amount: the amount that the contributor is trying to contribute
 
+🛠️ Instructions
+
+The program supports the following instructions:
+- Initialize – Sets up a new fundraiser with target amount, duration, and metadata.\n
+- Contribute – Allows users to contribute funds to the active fundraiser.
+- CheckContribution – Allows users to check their individual contribution.
+- RefundAndClose – Refunds contributors and closes the fundraiser if target not met or expired.
+
+⚙️ Constants
+
+The logic is guided by the following constants:
+- MIN_AMOUNT_TO_RAISE: Minimum amount required to initiate a fundraiser (3 SOL).
+- SECONDS_TO_DAYS: Time duration to convert seconds to days (86400).
+- MAX_CONTRIBUTION_PERCENTAGE: Limits any user from contributing more than 10%.
+- PERCENTAGE_SCALER: Scaler used to calculate percentages (value: 100).
