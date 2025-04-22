@@ -1,3 +1,4 @@
+#[cfg(test)]
 use mollusk_svm::result::{Check, ProgramResult};
 use mollusk_svm::{program, Mollusk};
 use solana_sdk::account_info::AccountInfo;
