@@ -1,5 +1,5 @@
 
-use super::utils::{DataLen, Initialized};
+use super::utils::{DataLEN, Initialized};
 
 #[repr(C)]
 #[derive(Debug, Clone, Default, PartialEq)]
@@ -8,7 +8,7 @@ pub struct Contribute {
     pub amount: u64,
 }
 
-impl DataLen for Contribute {
+impl DataLEN for Contribute {
     const LEN: usize = core::mem::size_of::<Contribute>();
 }
 

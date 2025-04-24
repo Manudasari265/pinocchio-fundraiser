@@ -1,5 +1,5 @@
 use pinocchio::pubkey::Pubkey;
-use super::utils::{DataLen, Initialized};
+use super::utils::{DataLEN, Initialized};
 
 #[repr(C)]
 #[derive(Clone, Debug, Default, PartialEq)]
@@ -14,7 +14,7 @@ pub struct Fundraiser {
     pub bump: u8,
 }
 
-impl DataLen for Fundraiser {
+impl DataLEN for Fundraiser {
     const LEN: usize = core::mem::size_of::<Fundraiser>();
 }
 

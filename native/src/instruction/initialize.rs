@@ -14,7 +14,7 @@ use pinocchio_system::instructions::CreateAccount;
 use crate::{
     state::Fundraiser,
     state::utils::{
-        DataLen,
+        DataLEN,
         load_ix_data,
         load_acc_mut_unchecked,
     }
@@ -28,7 +28,7 @@ pub struct InitializeInstructionData {
     pub bump: u8,
 }
 
-impl DataLen for InitializeInstructionData {
+impl DataLEN for InitializeInstructionData {
     const LEN: usize = core::mem::size_of::<InitializeInstructionData>();
 }
 

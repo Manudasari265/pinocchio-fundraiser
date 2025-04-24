@@ -1,7 +1,7 @@
 use crate::instruction::{self, FundraiserInsruction};
 
 use pinocchio::{
-    account_info::AccountInfo, nostd_panic_handler, no_allocator, program_entrypoint, program_error::ProgramError, pubkey::Pubkey, ProgramResult
+    account_info::AccountInfo, default_panic_handler, no_allocator, program_entrypoint, program_error::ProgramError, pubkey::Pubkey, ProgramResult
 };
 
 // This is the entrypoint for the program.
@@ -9,7 +9,7 @@ program_entrypoint!(process_instruction);
 //Do not allocate memory.
 no_allocator!();
 // Use the no_std panic handler.
-nostd_panic_handler!();
+default_panic_handler!();
 
 #[inline(always)]
 fn process_instruction (

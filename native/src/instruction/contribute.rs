@@ -17,7 +17,7 @@ use crate::{
         SECONDS_TO_DAYS
     }, error::FundraiserError, 
     state::utils::{
-        load_acc_mut, load_acc_mut_unchecked, load_ix_data, DataLen
+        load_acc_mut, load_acc_mut_unchecked, load_ix_data, DataLEN
     },
     state::{Fundraiser, Contribute},
 };
@@ -30,7 +30,7 @@ pub struct ContributeInstructionData {
     pub contributor_bump: u8,
 }
 
-impl DataLen for ContributeInstructionData {
+impl DataLEN for ContributeInstructionData {
     const LEN: usize = core::mem::size_of::<ContributeInstructionData>();
 }
 

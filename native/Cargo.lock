@@ -959,6 +959,7 @@ dependencies = [
 name = "fundraiser-pinocchio"
 version = "0.1.0"
 dependencies = [
+ "five8_const",
  "mollusk-svm",
  "mollusk-svm-bencher",
  "pinocchio",

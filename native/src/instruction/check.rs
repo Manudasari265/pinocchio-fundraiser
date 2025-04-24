@@ -10,15 +10,15 @@ use pinocchio_token::{
 };
 use crate::{
     error::FundraiserError, state::{utils::{
-        load_acc, load_ix_data, DataLen
+        load_acc, load_ix_data, DataLEN
     }, Fundraiser}
 };
 
-impl DataLen for Mint {
+impl DataLEN for Mint {
     const LEN: usize = core::mem::size_of::<Mint>();
 }
 
-impl DataLen for TokenAccount {
+impl DataLEN for TokenAccount {
     const LEN: usize = core::mem::size_of::<TokenAccount>();
 }
 
