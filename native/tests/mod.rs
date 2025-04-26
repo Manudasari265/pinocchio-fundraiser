@@ -19,7 +19,6 @@ use solana_sdk::{
     program_option::COption,
     program_pack::Pack,
     pubkey::Pubkey,
-    state::AccountState,
 };
 
 pub fn connect() -> (Pubkey, Mollusk) {

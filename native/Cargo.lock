@@ -960,8 +960,9 @@ name = "fundraiser-pinocchio"
 version = "0.1.0"
 dependencies = [
  "five8_const",
- "mollusk-svm",
+ "mollusk-svm 0.1.5",
  "mollusk-svm-bencher",
+ "mollusk-token",
  "pinocchio",
  "pinocchio-log",
  "pinocchio-pubkey",
@@ -1605,6 +1606,21 @@ dependencies = [
 
 [[package]]
 name = "mollusk-svm"
+version = "0.0.6"
+source = "git+https://github.com/deanmlittle/mollusk#e57998bc4ebf08ed6d43358c6c28d154ca3e081c"
+dependencies = [
+ "bincode",
+ "solana-bpf-loader-program",
+ "solana-compute-budget",
+ "solana-logger",
+ "solana-program-runtime",
+ "solana-sdk",
+ "solana-system-program",
+ "thiserror 1.0.69",
+]
+
+[[package]]
+name = "mollusk-svm"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "31b5f9d6653145815a076efa5d1a7edd214c05d5130cd46a049ededb9f81985f"
@@ -1647,7 +1663,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "178749992d0908e14ef572d18ef4bd0bca0a0515a178960a202396a0c9fd0852"
 dependencies = [
  "chrono",
- "mollusk-svm",
+ "mollusk-svm 0.1.5",
  "num-format",
  "serde_json",
  "solana-account",
@@ -1676,6 +1692,15 @@ dependencies = [
  "solana-instruction",
  "solana-pubkey",
  "solana-transaction-context",
+]
+
+[[package]]
+name = "mollusk-token"
+version = "0.1.0"
+source = "git+https://github.com/deanmlittle/mollusk#e57998bc4ebf08ed6d43358c6c28d154ca3e081c"
+dependencies = [
+ "mollusk-svm 0.0.6",
+ "solana-sdk",
 ]
 
 [[package]]
