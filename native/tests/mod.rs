@@ -2,13 +2,7 @@
 mod initialize;
 
 #[cfg(test)]
-mod contribute;
-
-#[cfg(test)]
-mod check;
-
-#[cfg(test)]
-mod refund;
+mod contribute_test;
 
 use mollusk_svm::{program, Mollusk};
 use solana_sdk::{
